@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="base.css" />
+	<h:outputStylesheet library="css" name="skeleton.css" />
+	<h:outputStylesheet library="css" name="screen.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>NewProject</title>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/images/favicon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+	
+</h:head>
+<h:body>
+<div id="header">
+  <div class="container header"> 
+    <!-- Header | Logo, Menu
+		================================================== -->
+    <header>
+      <div class="logo"><a href="index.html"><img src="resources/images/logo.png" alt="" /></a></div>
+      <div class="mainmenu">
+        <div id="mainmenu">
+          <ul class="sf-menu">
+            <li ><a href="start.xhtml" id="#{view.viewId == '/start.xhtml' ? 'visited' : ''}"><span class="home"><img src="resources/images/home.png" alt="" /></span>Home</a></li>
+            <li ><a href="end.xhtml" id="#{view.viewId == '/end.xhtml' ? 'visited' : ''}"><span class="home"><img src="resources/images/about.png" alt="" /></span>About</a></li>             
+          </ul>
+        </div>
+         <div id="language" >
+        <ul style="margin-top: -70px;">
+        <li> 
+           <ui:insert name="language">
+					<ui:include src="/template/language.xhtml" />
+				</ui:insert>
+          </li>  
+          </ul>  
+          </div>      
+      </div>
+    </header>
+  </div>
+</div>
+<!-- Home Content Part - Slider ==================================================
+================================================== -->
+<div class="flexslider">
+  <ul class="slides">
+    <li> <a href="#"><img src="images/flexslider/3.jpg" alt=""/></a> </li>
+    <li> <img src="images/flexslider/6.jpg" alt="" /> </li>
+    <li> <a href="#"><img src="images/flexslider/4.jpg" alt="" /></a>
+      <p class="flex-caption">Welcome to Proximet Site. This is example of the Caption Title.</p>
+    </li>
+  </ul>
+</div>
+<!-- Home Content Part - Box One ==================================================
+================================================== -->
+<div class="blankSeparator"></div>
+<div class="container">
+
+
+       <ui:insert name="inputFields">
+          </ui:insert>
+      
+</div>
+
+<!-- end container --> 
+
+
+<!--Footer ==================================================
+================================================== -->
+<div id="footer">
+  <div class="container">
+    <div class="eleven columns alpha">
+      <p class="copyright"> Copyright 2015. Quantag-it. All rights reserved.</p>
+    </div>
+     </div>
+    
+  </div>
+  <!-- container ends here --> 
+
+<!-- footer ends here --> 
+<!-- Copyright ==================================================
+================================================== -->
+
+
+</h:body>
+</html>
