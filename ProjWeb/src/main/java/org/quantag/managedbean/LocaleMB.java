@@ -34,19 +34,19 @@ public class LocaleMB implements Serializable {
 		return locale;
 	}
 
+	public void changeLanguage(String language) {
+		locale = new Locale(language);
+		BasicConfigurator.configure();
+		FacesContext.getCurrentInstance().getViewRoot()
+				.setLocale(new Locale("en_GB"));
+	}
+
 	public String getLanguage() {
 		return locale.getLanguage();
 	}
 
 	public void setLanguage(String language) {
 		changeLanguage(language);
-	}
-
-	public void changeLanguage(String language) {
-		locale = new Locale(language);
-		BasicConfigurator.configure();
-		FacesContext.getCurrentInstance().getViewRoot()
-				.setLocale(new Locale("en_GB"));
 	}
 	
 	

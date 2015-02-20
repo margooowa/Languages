@@ -1,0 +1,10 @@
+
+
+.styleDataTable{
+display: inline;
+}
+
+.styleDataTable td{
+padding-bottom: 2em;
+padding-right: 1em;
+}

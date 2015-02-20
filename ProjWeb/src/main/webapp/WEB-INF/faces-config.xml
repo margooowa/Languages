@@ -17,5 +17,8 @@
          <base-name>org.quantag.languages.DBResourceBundle</base-name>
          <var>msg</var>
       </resource-bundle>
+      <message-bundle>
+	  	org.quantag.languages.DBResourceBundle
+	  </message-bundle>
    </application>
 </faces-config>

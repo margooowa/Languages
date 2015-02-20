@@ -1,32 +1,72 @@
 <!DOCTYPE html>
-<html 
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
-	<f:view locale="#{localeMB.locale}">
-<h:head>
+<f:view locale="#{localeMB.locale}">
+	<h:head>
 		<h:outputStylesheet library="css" name="base.css" />
 		<h:outputStylesheet library="css" name="screen.css" />
-		<h:outputStylesheet library="css" name="skeleton.css" />		
+		<h:outputStylesheet library="css" name="skeleton.css" />
+		<h:outputStylesheet library="css" name="custom.css" />
 	</h:head>
 	<h:body>
 		<ui:composition template="/template/common.xhtml">
 			<ui:define name="inputFields">
 				<h:form id="jsfFormUser">
-					<h:panelGrid columns="1" style="margin:0 auto">						
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
+					<h:panelGrid columns="1" style="margin:0 auto">
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
 
-						<h:outputLabel id="changeLang" value="#{msg['Hello']}!!! " style="font-size:36px"/>
+						<h:outputLabel id="changeLang" value="#{msg['hello']}!!! "
+							style="font-size:36px" />
+
+						<br />
+						<br />
+						<br />
+
+						<h:panelGrid columns="3" styleClass="styleDataTable">
+
+							<h:outputLabel for="firstname" value="#{msg['firstname']}: " />
+							<p:inputText id="firstname" value="#{homeMB.firstName}"
+								required="true">
+								<f:validateLength minimum="2" />
+							</p:inputText>
+							<p:message for="firstname" />
+
+							<h:outputLabel for="lastname" value="#{msg['lastname']}: " />
+							<p:inputText id="lastname" value="#{homeMB.lastName}"
+								required="true">
+								<f:validateLength minimum="2" />
+							</p:inputText>
+							<p:message for="lastname"/>
+
+							<h:outputLabel for="street" value="#{msg['street']}: " />
+							<p:inputText id="street" value="#{homeMB.street}" required="true">
+								<f:validateLength minimum="2" />
+							</p:inputText>
+							<p:message for="street" />
+
+							<h:outputLabel for="city" value="#{msg['city']}: " />
+							<p:inputText id="city" value="#{homeMB.city}" required="true">
+								<f:validateLength minimum="2" />
+							</p:inputText>
+							<p:message for="city" />
+						</h:panelGrid>
+
+						
+						<br />
+						<br />
+						
+						<p:commandButton value="#{msg['savedata']}" update="jsfFormUser"
+							id="btn" action="#{homeMB.saveData}"
+							oncomplete="if (args &amp;&amp; !args.validationFailed) ">
+						</p:commandButton>
 					</h:panelGrid>
 				</h:form>
 			</ui:define>
